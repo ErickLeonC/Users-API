@@ -18,7 +18,6 @@ public class UserListController {
 	@GetMapping(path="/all")
 	@ResponseBody
 	public List<User> getAllUser() {
-		System.out.println("asdasdsa");
 		return UserRegistration.getInstance().getUserRecords();
 	}
 }
