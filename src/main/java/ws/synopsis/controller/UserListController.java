@@ -3,18 +3,22 @@ package ws.synopsis.controller;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import ws.synopsis.beans.User;
 import ws.synopsis.beans.UserRegistration;
 
-@Controller
+@RestController
+@RequestMapping(value = "/users")
 public class UserListController {
-	@RequestMapping(method = RequestMethod.GET, value="/user/all")
+	@GetMapping(path="/all")
 	@ResponseBody
-	  public List<User> getAllUser() {
-	  return UserRegistration.getInstance().getUserRecords();
-	  }
+	public List<User> getAllUser() {
+		System.out.println("asdasdsa");
+		return UserRegistration.getInstance().getUserRecords();
+	}
 }

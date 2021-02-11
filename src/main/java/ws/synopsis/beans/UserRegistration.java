@@ -32,7 +32,7 @@ public class UserRegistration {
 			User user_ = userRecords.get(i);
 			int a = user.getId();
 			int b = user_.getId();
-			if (a==b) {  //user_.getId().equals(user.getId())
+			if (a == b) { // user_.getId().equals(user.getId())
 				userRecords.set(i, user);
 				return "Update successful";
 			}
@@ -46,7 +46,7 @@ public class UserRegistration {
 		for (int i = 0; i < userRecords.size(); i++) {
 			User user = userRecords.get(i);
 			int a = user.getId();
-			if (id==a) {
+			if (id == a) {
 				userRecords.remove(i);// update the new record
 				return "Delete successful";
 			}
